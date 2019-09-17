@@ -1,0 +1,2 @@
+# BlackScholes
+Simple GUI pricer
