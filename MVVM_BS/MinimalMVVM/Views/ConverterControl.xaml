@@ -10,13 +10,11 @@
              d:DataContext="{d:DesignInstance ViewModels:Presenter}">
 
     <UserControl.InputBindings>
-        <KeyBinding Key="Enter" Command="{Binding ConvertTextCommand}"/>
+        <KeyBinding Key="Enter" Command="{Binding ComputeBSCommand}"/>
     </UserControl.InputBindings>
-    
+
     <StackPanel Margin="0,35,0,10">
-        <!--  <Label Foreground="Blue" Margin="5,5,5,0">Text To Convert</Label> -->
-        <!--  <TextBox Text="{Binding SomeText, UpdateSourceTrigger=PropertyChanged}" Margin="5"/> -->
-        
+
         <Label Foreground="Blue" Margin="5,5,5,0">Stock Price</Label>
         <TextBox Text="{Binding StockPrice, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
 
@@ -42,12 +40,6 @@
 
         <Button Command="{Binding ComputeBSCommand}" Margin="5">BS</Button>
 
-        <!--  <Label Foreground="Blue" Margin="5,5,5,0">History</Label> -->
-        <!--  <ListBox ItemsSource="{Binding History}" Height="200" Margin="5"/> -->
-        <!--  <Button Command="{Binding ConvertTextCommand}" Margin="5" Click="Button_Click">Convert</Button> -->
-
-        <!-- <Button Command="{Binding ComputeBSCommand}" Margin="5" Click="Button_Click">Convert</Button> -->
-        
     </StackPanel>
     
 </UserControl>

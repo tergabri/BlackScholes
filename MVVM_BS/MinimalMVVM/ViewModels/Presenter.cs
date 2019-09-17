@@ -10,7 +10,6 @@ namespace MinimalMVVM.ViewModels
         private readonly TextConverter _textConverter = new TextConverter(s => s.ToUpper());
         private BlackScholes blackScholes = new BlackScholes();
 
-        private string _someText;
         private string _stockPrice;
         private string _strikePrice;
         private string _timeToMaturity;
@@ -20,16 +19,6 @@ namespace MinimalMVVM.ViewModels
         private string _putPrice;
 
         private readonly ObservableCollection<string> _history = new ObservableCollection<string>();
-
-        public string SomeText
-        {
-            get { return _someText; }
-            set
-            {
-                _someText = value;
-                RaisePropertyChangedEvent("SomeText");
-            }
-        }
 
         public string StockPrice
         {
@@ -106,21 +95,9 @@ namespace MinimalMVVM.ViewModels
             get { return _history; }
         }
 
-        public ICommand ConvertTextCommand
-        {
-            get { return new DelegateCommand(ConvertText); }
-        }
-
         public ICommand ComputeBSCommand
         {
             get { return new DelegateCommand(ComputeBS); }
-        }
-
-        private void ConvertText()
-        {
-            if (string.IsNullOrWhiteSpace(SomeText)) return;
-            AddToHistory(_textConverter.ConvertText(SomeText));
-            SomeText = string.Empty;
         }
 
         private void ComputeBS()
