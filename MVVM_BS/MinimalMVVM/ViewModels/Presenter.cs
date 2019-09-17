@@ -102,7 +102,7 @@ namespace MinimalMVVM.ViewModels
         private void ComputeBS()
         {
             double S;
-            bool isSOk = double.TryParse(StockPrice, out S);
+            bool isSOk = double.TryParse(StockPrice, System.Globalization.NumberStyles.Number, System.Globalization.CultureInfo.CreateSpecificCulture("en-US"), out S);
             if (!isSOk ||  S<=0)
             {
                 CallPrice = "Stock price must be a positive number";
@@ -111,7 +111,7 @@ namespace MinimalMVVM.ViewModels
             }
 
             double K;
-            bool isKOk = double.TryParse(StrikePrice, out K);
+            bool isKOk = double.TryParse(StrikePrice, System.Globalization.NumberStyles.Number, System.Globalization.CultureInfo.CreateSpecificCulture("en-US"), out K);
             if (!isKOk || K <= 0)
             {
                 CallPrice = "Strike price must be a positive number";
@@ -120,7 +120,7 @@ namespace MinimalMVVM.ViewModels
             }
 
             double t;
-            bool istOk = double.TryParse(TimeToMaturity, out t);
+            bool istOk = double.TryParse(TimeToMaturity, System.Globalization.NumberStyles.Number, System.Globalization.CultureInfo.CreateSpecificCulture("en-US"), out t);
             if (!istOk || t <= 0)
             {
                 CallPrice = "Time to maturity price must be a positive number";
@@ -129,7 +129,7 @@ namespace MinimalMVVM.ViewModels
             }
 
             double sigma;
-            bool issigmaOk = double.TryParse(StandardDeviation, out sigma);
+            bool issigmaOk = double.TryParse(StandardDeviation, System.Globalization.NumberStyles.Number, System.Globalization.CultureInfo.CreateSpecificCulture("en-US"), out sigma);
             if (!issigmaOk || sigma <= 0)
             {
                 CallPrice = "Sigma must be a positive number";
@@ -138,7 +138,7 @@ namespace MinimalMVVM.ViewModels
             }
 
             double r;
-            bool isrOk = double.TryParse(RiskFreeRate, out r);
+            bool isrOk = double.TryParse(RiskFreeRate, System.Globalization.NumberStyles.Number, System.Globalization.CultureInfo.CreateSpecificCulture("en-US"), out r);
             if (!isrOk)
             {
                 CallPrice = "Sigma must be a number";
