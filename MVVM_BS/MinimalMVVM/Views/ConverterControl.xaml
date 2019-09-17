@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="MinimalMVVM.Views.ConverterControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ViewModels="clr-namespace:MinimalMVVM.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000"
+             d:DesignWidth="300"
+             d:DataContext="{d:DesignInstance ViewModels:Presenter}">
+
+    <UserControl.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding ConvertTextCommand}"/>
+    </UserControl.InputBindings>
+    
+    <StackPanel Margin="0,35,0,10">
+        <!--  <Label Foreground="Blue" Margin="5,5,5,0">Text To Convert</Label> -->
+        <!--  <TextBox Text="{Binding SomeText, UpdateSourceTrigger=PropertyChanged}" Margin="5"/> -->
+        
+        <Label Foreground="Blue" Margin="5,5,5,0">Stock Price</Label>
+        <TextBox Text="{Binding StockPrice, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+        <Label Foreground="Blue" Margin="5,5,5,0">Strike Price</Label>
+        <TextBox Text="{Binding StrikePrice, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+        
+        <Label Foreground="Blue" Margin="5,5,5,0">Time To Maturity</Label>
+        <TextBox Text="{Binding TimeToMaturity, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+        <Label Foreground="Blue" Margin="5,5,5,0">Standard Deviation</Label>
+        <TextBox Text="{Binding StandardDeviation, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+        <Label Foreground="Blue" Margin="5,5,5,0">RiskFreeRate</Label>
+        <TextBox Text="{Binding RiskFreeRate, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+        <Label Foreground="Blue" Margin="5,5,5,0">Call Price</Label>
+        <TextBox Text="{Binding CallPrice, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+        <Label Foreground="Blue" Margin="5,5,5,0">Put Price</Label>
+        <TextBox Text="{Binding PutPrice, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+        <Label Foreground="Blue" Margin="5,5,5,0">ComputePrice</Label>
+
+        <Button Command="{Binding ComputeBSCommand}" Margin="5">BS</Button>
+
+        <!--  <Label Foreground="Blue" Margin="5,5,5,0">History</Label> -->
+        <!--  <ListBox ItemsSource="{Binding History}" Height="200" Margin="5"/> -->
+        <!--  <Button Command="{Binding ConvertTextCommand}" Margin="5" Click="Button_Click">Convert</Button> -->
+
+        <!-- <Button Command="{Binding ComputeBSCommand}" Margin="5" Click="Button_Click">Convert</Button> -->
+        
+    </StackPanel>
+    
+</UserControl>
