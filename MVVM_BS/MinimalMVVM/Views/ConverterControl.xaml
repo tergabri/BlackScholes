@@ -36,9 +36,7 @@
         <Label Foreground="Blue" Margin="5,5,5,0">Put Price</Label>
         <TextBox Text="{Binding PutPrice, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
 
-        <Label Foreground="Blue" Margin="5,5,5,0">ComputePrice</Label>
-
-        <Button Command="{Binding ComputeBSCommand}" Margin="5">BS</Button>
+        <Button Command="{Binding ComputeBSCommand}" Margin="5">Compute Premium</Button>
 
     </StackPanel>
     

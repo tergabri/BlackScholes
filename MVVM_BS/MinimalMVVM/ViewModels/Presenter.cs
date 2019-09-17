@@ -7,7 +7,6 @@ namespace MinimalMVVM.ViewModels
 {
     public class Presenter : ObservableObject
     {
-        private readonly TextConverter _textConverter = new TextConverter(s => s.ToUpper());
         private BlackScholes blackScholes = new BlackScholes();
 
         private string _stockPrice;
